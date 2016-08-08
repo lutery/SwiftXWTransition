@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="XWMagicMoveCell" customModule="SwiftXWTrasition" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="178" height="188"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="178" height="188"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="zrx4" translatesAutoresizingMaskIntoConstraints="NO" id="ea9-Qr-amb">
+                        <frame key="frameInset" width="178" height="140"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="我是测试" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojA-l2-Es8">
+                        <frame key="frameInset" minY="140" width="178" height="48"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ojA-l2-Es8" secondAttribute="trailing" id="2h6-m2-eba"/>
+                <constraint firstItem="ojA-l2-Es8" firstAttribute="top" secondItem="ea9-Qr-amb" secondAttribute="bottom" id="6aA-vc-Vl1"/>
+                <constraint firstAttribute="bottom" secondItem="ojA-l2-Es8" secondAttribute="bottom" id="6js-7t-kcp"/>
+                <constraint firstItem="ea9-Qr-amb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bmk-Hs-Td1"/>
+                <constraint firstItem="ojA-l2-Es8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dWG-ki-ecW"/>
+                <constraint firstAttribute="trailing" secondItem="ea9-Qr-amb" secondAttribute="trailing" id="k8J-Gg-EO6"/>
+                <constraint firstItem="ea9-Qr-amb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vWE-KQ-QAa"/>
+            </constraints>
+            <size key="customSize" width="178" height="188"/>
+            <connections>
+                <outlet property="imageView" destination="ea9-Qr-amb" id="KE8-XX-LJM"/>
+            </connections>
+            <point key="canvasLocation" x="90" y="89"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="zrx4" width="650" height="650"/>
+    </resources>
+</document>
