@@ -43,10 +43,58 @@ class XWNaviTransition: NSObject,UIViewControllerAnimatedTransitioning {
         let fromVC = transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey) as! XWMagicMoveController;
         let toVC = transitionContext.viewController(forKey: UITransitionContextToViewControllerKey) as! XWMagicMovePushController;
         
-//        let cell = 
+        let cell = fromVC.collectionView?.cellForItem(at: fromVC.currentIndexPath!) as! XWMagicMoveCell;
+        let containerView = transitionContext.containerView;
+        let tempView = cell.imageView.snapshotView(afterScreenUpdates: false);
+        tempView?.frame = cell.imageView.convert(cell.imageView.bounds, to: containerView);
+        
+        cell.imageView.isHidden = true;
+        toVC.view.alpha = 0;
+        toVC.imageView?.isHidden = true;
+        
+        containerView.addSubview(toVC.view);
+        containerView.addSubview(tempView!);
+        
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.55, initialSpringVelocity: 1 / 0.55, options: UIViewAnimationOptions(rawValue: UInt(0)), animations: {
+            tempView?.frame = (toVC.imageView?.convert((toVC.imageView?.bounds)!, to: containerView))!;
+            toVC.view.alpha = 1;
+            }, completion: {
+                finished in
+                tempView?.isHidden = true;
+                toVC.imageView?.isHidden = false;
+                transitionContext.completeTransition(true);
+        })
     }
     
     func doPopAnimation(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey) as! XWMagicMovePushController;
+        let toVC = transitionContext.viewController(forKey: UITransitionContextToViewControllerKey) as! XWMagicMoveController;
         
+        let cell = toVC.collectionView?.cellForItem(at: toVC.currentIndexPath!) as! XWMagicMoveCell;
+        let containerView = transitionContext.containerView;
+        
+        let tempView = containerView.subviews.last! as UIView;
+        
+        cell.imageView.isHidden = true;
+        fromVC.imageView?.isHidden = true;
+        tempView.isHidden = false;
+        
+        containerView.insertSubview(toVC.view, at: 0);
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.55, initialSpringVelocity: 1 / 0.55, options: UIViewAnimationOptions(rawValue: UInt(0)), animations: {
+            tempView.frame = cell.imageView.convert(cell.imageView.bounds, to: containerView);
+            fromVC.view.alpha = 0;
+            }, completion: {
+                finished in
+                transitionContext.completeTransition(!(transitionContext.transitionWasCancelled));
+                if transitionContext.transitionWasCancelled {
+                    tempView.isHidden = true;
+                    fromVC.imageView?.isHidden = false;
+                }
+                else{
+                    cell.imageView.isHidden = false;
+                    tempView.removeFromSuperview();
+                }
+//                transitionContext.completeTransition(true);
+        })
     }
 }

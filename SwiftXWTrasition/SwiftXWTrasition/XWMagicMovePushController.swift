@@ -48,13 +48,17 @@ class XWMagicMovePushController: UIViewController, UINavigationControllerDelegat
     }
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        NSLog("％@");
+//        NSLog("％@", NSStringFromCGRect((self.imageView?.frame)!));
         
         return XWNaviTransition(WithType: operation == UINavigationControllerOperation.push ? XWNaviOneTransitionType.Push : XWNaviOneTransitionType.Pop);
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return (interactiveTransition?.interation)! ? interactiveTransition : nil;
+        var ret:UIViewControllerInteractiveTransitioning?  = nil;
+        if interactiveTransition != nil {
+            ret = (interactiveTransition?.interation)! ? interactiveTransition : nil;
+        }
+        return ret;
     }
 
     /*

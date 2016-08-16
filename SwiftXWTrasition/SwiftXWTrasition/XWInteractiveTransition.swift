@@ -17,7 +17,7 @@ enum XWInteractiveType : NSInteger {
 }
 
 class XWInteractiveTransition: UIPercentDrivenInteractiveTransition {
-    var interation:Bool = true;
+    var interation:Bool = false;
     var presentConifg:(()->Void)?;
     var pushConifg:(()->Void)?;
     

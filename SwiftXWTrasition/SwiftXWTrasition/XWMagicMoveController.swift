@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class XWMagicMoveController: UICollectionViewController {
 
-    var currentIndexPath:NSIndexPath? = nil;
+    var currentIndexPath:IndexPath? = nil;
     
     init() {
         let layout = UICollectionViewFlowLayout();
