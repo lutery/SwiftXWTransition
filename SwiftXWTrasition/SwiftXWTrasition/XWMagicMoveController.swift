@@ -34,7 +34,7 @@ class XWMagicMoveController: UICollectionViewController {
 //        let layout = UICollectionViewFlowLayout
 
         self.title = "神奇移动";
-        self.collectionView?.backgroundColor = UIColor.white();
+        self.collectionView?.backgroundColor = UIColor.white;
         self.collectionView?.register(UINib(nibName: "XWMagicMoveCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier);
         let back = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.plain, target: self, action: #selector(XWMagicMoveController.backToRoot));
         self.navigationItem.leftBarButtonItem = back;

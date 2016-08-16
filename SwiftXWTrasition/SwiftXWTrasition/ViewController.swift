@@ -56,7 +56,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(NSClassFromString(self._viewControllers[indexPath.row] as! String) as! UIViewController, animated: true);
+        let className = self._viewControllers[indexPath.row] as! String;
+        let clz = NSClassFromString("SwiftXWTrasition." + className) as! UIViewController.Type;
+        let vc:UIViewController = clz.init();
+        self.navigationController?.pushViewController(vc, animated: true);
     }
 }
 
