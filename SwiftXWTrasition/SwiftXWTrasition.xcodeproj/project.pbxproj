@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E65EC4F81D6447E50014F544 /* XWPresentOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC4F71D6447E50014F544 /* XWPresentOneController.swift */; };
+		E65EC4FA1D64515A0014F544 /* XWPresentedOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC4F91D64515A0014F544 /* XWPresentedOneController.swift */; };
+		E65EC4FC1D6459500014F544 /* XWPresentOneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC4FB1D6459500014F544 /* XWPresentOneTransition.swift */; };
 		E68DDA001D58255400B87E69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68DD9FF1D58255400B87E69 /* AppDelegate.swift */; };
 		E68DDA021D58255400B87E69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68DDA011D58255400B87E69 /* ViewController.swift */; };
 		E68DDA051D58255400B87E69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E68DDA031D58255400B87E69 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E65EC4F71D6447E50014F544 /* XWPresentOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPresentOneController.swift; sourceTree = "<group>"; };
+		E65EC4F91D64515A0014F544 /* XWPresentedOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPresentedOneController.swift; sourceTree = "<group>"; };
+		E65EC4FB1D6459500014F544 /* XWPresentOneTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPresentOneTransition.swift; sourceTree = "<group>"; };
 		E68DD9FC1D58255400B87E69 /* SwiftXWTrasition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftXWTrasition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68DD9FF1D58255400B87E69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E68DDA011D58255400B87E69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +163,9 @@
 		E68DDA2E1D585B2800B87E69 /* PresentOneController */ = {
 			isa = PBXGroup;
 			children = (
+				E65EC4F71D6447E50014F544 /* XWPresentOneController.swift */,
+				E65EC4F91D64515A0014F544 /* XWPresentedOneController.swift */,
+				E65EC4FB1D6459500014F544 /* XWPresentOneTransition.swift */,
 			);
 			name = PresentOneController;
 			sourceTree = "<group>";
@@ -316,11 +325,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65EC4FC1D6459500014F544 /* XWPresentOneTransition.swift in Sources */,
 				E68DDA021D58255400B87E69 /* ViewController.swift in Sources */,
+				E65EC4FA1D64515A0014F544 /* XWPresentedOneController.swift in Sources */,
 				E68DDA401D58876000B87E69 /* XWMagicMoveCell.swift in Sources */,
 				E68DDA431D5888DC00B87E69 /* XWInteractiveTransition.swift in Sources */,
 				E68DDA3D1D585D3E00B87E69 /* XWNaviTransition.swift in Sources */,
 				E68DDA001D58255400B87E69 /* AppDelegate.swift in Sources */,
+				E65EC4F81D6447E50014F544 /* XWPresentOneController.swift in Sources */,
 				E68DDA3B1D585D0700B87E69 /* XWMagicMovePushController.swift in Sources */,
 				E68DDA351D585C3200B87E69 /* XWMagicMoveController.swift in Sources */,
 			);
@@ -561,6 +573,7 @@
 				E68DDA261D58255400B87E69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68DDA271D58255400B87E69 /* Build configuration list for PBXNativeTarget "SwiftXWTrasitionTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +582,7 @@
 				E68DDA291D58255400B87E69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68DDA2A1D58255400B87E69 /* Build configuration list for PBXNativeTarget "SwiftXWTrasitionUITests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +591,7 @@
 				E68DDA2C1D58255400B87E69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

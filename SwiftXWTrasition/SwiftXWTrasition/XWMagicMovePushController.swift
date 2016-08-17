@@ -24,14 +24,15 @@ class XWMagicMovePushController: UIViewController, UINavigationControllerDelegat
         self.view.addSubview(imageView);
         imageView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.view.frame.height / 2 + 210);
         imageView.bounds = CGRect(x: 0, y: 0, width: 280, height: 280);
-        let textView = UITextView();
+        let textView = UITextView.init();
+        textView.translatesAutoresizingMaskIntoConstraints = false;
         textView.text = "这是类似KeyNote的神奇移动效果，向右滑动可以通过手势控制pop动画";
         textView.font = UIFont.systemFont(ofSize: 14);
-        self.view .addSubview(textView);
+        self.view.addSubview(textView);
         
         let viewsDictionary = ["imageView":imageView, "textView":textView];
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[textView]|", options: [], metrics: nil, views: viewsDictionary));
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[imageView]-[textView]", options: [], metrics: nil, views: viewsDictionary));
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[imageView]-0-[textView]-0-|", options: [], metrics: nil, views: viewsDictionary));
     
         self.interactiveTransition = XWInteractiveTransition.init(interactiveTransitionWithTransitionType: XWInteractiveType.Pop, GestureDirection: XWInteractiveDirection.right);
         
