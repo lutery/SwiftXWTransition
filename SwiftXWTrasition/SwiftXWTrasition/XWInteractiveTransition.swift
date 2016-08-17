@@ -49,17 +49,17 @@ class XWInteractiveTransition: UIPercentDrivenInteractiveTransition {
             persent = transitionX / (panGesture.view?.frame.size.width)!;
             break
             
-        case XWInteractiveDirection.down:
+        case XWInteractiveDirection.right:
             let transitionX = panGesture.translation(in: panGesture.view).x;
             persent = transitionX / (panGesture.view?.frame.size.width)!;
             break;
             
-        case XWInteractiveDirection.right:
+        case XWInteractiveDirection.up:
             let transitionY = -panGesture.translation(in: panGesture.view).y;
             persent = transitionY / (panGesture.view?.frame.size.width)!;
             break;
             
-        case XWInteractiveDirection.up:
+        case XWInteractiveDirection.down:
             let transitionY = panGesture.translation(in: panGesture.view).y;
             persent = transitionY / (panGesture.view?.frame.size.height)!;
             break;
@@ -72,6 +72,7 @@ class XWInteractiveTransition: UIPercentDrivenInteractiveTransition {
             break;
             
         case .changed:
+            print("current Persent is \(persent)");
             self.update(persent);
             break;
             
@@ -109,6 +110,7 @@ class XWInteractiveTransition: UIPercentDrivenInteractiveTransition {
             break;
             
         case XWInteractiveType.Pop:
+            print("XWInteractiveType.Pop");
             self.vc?.navigationController?.popViewController(animated: true);
             break;
         }
