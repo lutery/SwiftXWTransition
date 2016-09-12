@@ -8,11 +8,14 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
+/// 魔法移动控制器
 class XWMagicMoveController: UICollectionViewController {
 
+    // 当前的索引
     var currentIndexPath:IndexPath? = nil;
+    // cell标识
+    private let reuseIdentifier = "Cell"
     
     init() {
         let layout = UICollectionViewFlowLayout();
