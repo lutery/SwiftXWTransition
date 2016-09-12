@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XWPresentOneController: UIViewController {
+class XWPresentOneController: UIViewController, XWPresentedOneControllerDelegate {
     
     var interactivePush:XWInteractiveTransition? = nil;
 
@@ -21,12 +21,14 @@ class XWPresentOneController: UIViewController {
         let imageView = UIImageView(image: UIImage.init(named: "zrx3.jpg"));
         imageView.layer.cornerRadius = 10;
         imageView.layer.masksToBounds = true;
+        imageView.translatesAutoresizingMaskIntoConstraints = false;
         self.view.addSubview(imageView);
         
         let button = UIButton(type: .custom);
         button.setTitle("点我或者向上滑动present", for: .normal);
         self.view.addSubview(button);
         button.setTitleColor(UIColor.black, for: .normal);
+        button.translatesAutoresizingMaskIntoConstraints = false;
         button.addTarget(self, action: #selector(XWPresentOneController.btnPresent), for: .touchUpInside);
         
         interactivePush = XWInteractiveTransition(WithTransitionType: .Present, GestureDirection: .up);
@@ -35,6 +37,12 @@ class XWPresentOneController: UIViewController {
             weakSelf?.btnPresent();
         };
         interactivePush?.addPanGesture(ForViewController: self.navigationController!);
+        
+        let viewsDictionary = ["imageView":imageView, "button":button];
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView(250)]|", options: [], metrics: nil, views: viewsDictionary));
+//        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[textView]|", options: [], metrics: nil, views: viewsDictionary));
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-70-[imageView(250)-10-[button]]|", options: [NSLayoutFormatOptions.alignAllCenterX], metrics: nil, views: viewsDictionary));
+//
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +51,17 @@ class XWPresentOneController: UIViewController {
     }
     
     func btnPresent(){
-        let presentedVC = XWPresentOneController();
-        
+        let presentedVC = XWPresentedOneController();
+        presentedVC.delegate = self;
+        self.present(presentedVC, animated: true, completion: nil);
+    }
+    
+    func presentedOneControllerPressedDismiss() {
+        self.dismiss(animated: true, completion: nil);
+    }
+    
+    func interactiveTransitionForPresent() -> UIViewControllerInteractiveTransitioning? {
+        return self.interactivePush;
     }
 
     /*

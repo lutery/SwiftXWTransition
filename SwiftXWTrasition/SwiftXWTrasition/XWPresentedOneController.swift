@@ -77,4 +77,20 @@ class XWPresentedOneController: UIViewController, UIViewControllerTransitioningD
     }
     */
 
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return XWPresentOneTransition(Type: PresentOneTransitionType.Present);
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return XWPresentOneTransition(Type: PresentOneTransitionType.Dismiss);
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return self.interactiveDismiss!.interation ? self.interactiveDismiss :  nil;
+    }
+    
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        let interactivePresent = self.delegate?.interactiveTransitionForPresent() as! XWInteractiveTransition;
+        return interactivePresent.interation ? interactivePresent : nil;
+    }
 }

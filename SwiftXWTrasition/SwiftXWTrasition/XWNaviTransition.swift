@@ -40,8 +40,8 @@ class XWNaviTransition: NSObject,UIViewControllerAnimatedTransitioning {
     }
     
     func doPushAnimation(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey) as! XWMagicMoveController;
-        let toVC = transitionContext.viewController(forKey: UITransitionContextToViewControllerKey) as! XWMagicMovePushController;
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! XWMagicMoveController;
+        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! XWMagicMovePushController;
         
         let cell = fromVC.collectionView?.cellForItem(at: fromVC.currentIndexPath!) as! XWMagicMoveCell;
         let containerView = transitionContext.containerView;
@@ -67,8 +67,8 @@ class XWNaviTransition: NSObject,UIViewControllerAnimatedTransitioning {
     }
     
     func doPopAnimation(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey) as! XWMagicMovePushController;
-        let toVC = transitionContext.viewController(forKey: UITransitionContextToViewControllerKey) as! XWMagicMoveController;
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! XWMagicMovePushController;
+        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! XWMagicMoveController;
         
         let cell = toVC.collectionView?.cellForItem(at: toVC.currentIndexPath!) as! XWMagicMoveCell;
         let containerView = transitionContext.containerView;
