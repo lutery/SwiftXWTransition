@@ -23,6 +23,9 @@
 		E68DDA401D58876000B87E69 /* XWMagicMoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68DDA3E1D58876000B87E69 /* XWMagicMoveCell.swift */; };
 		E68DDA411D58876000B87E69 /* XWMagicMoveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68DDA3F1D58876000B87E69 /* XWMagicMoveCell.xib */; };
 		E68DDA431D5888DC00B87E69 /* XWInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68DDA421D5888DC00B87E69 /* XWInteractiveTransition.swift */; };
+		E6E0C51E1DBDB07400EBFE25 /* XWPageCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E0C51D1DBDB07400EBFE25 /* XWPageCoverController.swift */; };
+		E6E0C5201DBDB0A400EBFE25 /* XWPageCoverTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E0C51F1DBDB0A400EBFE25 /* XWPageCoverTransition.swift */; };
+		E6E0C5221DBDBB2300EBFE25 /* XWPageCoverPushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E0C5211DBDBB2300EBFE25 /* XWPageCoverPushController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		E68DDA3E1D58876000B87E69 /* XWMagicMoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWMagicMoveCell.swift; sourceTree = "<group>"; };
 		E68DDA3F1D58876000B87E69 /* XWMagicMoveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XWMagicMoveCell.xib; sourceTree = "<group>"; };
 		E68DDA421D5888DC00B87E69 /* XWInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWInteractiveTransition.swift; sourceTree = "<group>"; };
+		E6E0C51D1DBDB07400EBFE25 /* XWPageCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPageCoverController.swift; sourceTree = "<group>"; };
+		E6E0C51F1DBDB0A400EBFE25 /* XWPageCoverTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPageCoverTransition.swift; sourceTree = "<group>"; };
+		E6E0C5211DBDBB2300EBFE25 /* XWPageCoverPushController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPageCoverPushController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,9 @@
 		E68DDA2F1D585B3600B87E69 /* PageConverController */ = {
 			isa = PBXGroup;
 			children = (
+				E6E0C51D1DBDB07400EBFE25 /* XWPageCoverController.swift */,
+				E6E0C51F1DBDB0A400EBFE25 /* XWPageCoverTransition.swift */,
+				E6E0C5211DBDBB2300EBFE25 /* XWPageCoverPushController.swift */,
 			);
 			name = PageConverController;
 			sourceTree = "<group>";
@@ -325,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E0C5201DBDB0A400EBFE25 /* XWPageCoverTransition.swift in Sources */,
 				E65EC4FC1D6459500014F544 /* XWPresentOneTransition.swift in Sources */,
 				E68DDA021D58255400B87E69 /* ViewController.swift in Sources */,
 				E65EC4FA1D64515A0014F544 /* XWPresentedOneController.swift in Sources */,
@@ -333,8 +343,10 @@
 				E68DDA3D1D585D3E00B87E69 /* XWNaviTransition.swift in Sources */,
 				E68DDA001D58255400B87E69 /* AppDelegate.swift in Sources */,
 				E65EC4F81D6447E50014F544 /* XWPresentOneController.swift in Sources */,
+				E6E0C51E1DBDB07400EBFE25 /* XWPageCoverController.swift in Sources */,
 				E68DDA3B1D585D0700B87E69 /* XWMagicMovePushController.swift in Sources */,
 				E68DDA351D585C3200B87E69 /* XWMagicMoveController.swift in Sources */,
+				E6E0C5221DBDBB2300EBFE25 /* XWPageCoverPushController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
