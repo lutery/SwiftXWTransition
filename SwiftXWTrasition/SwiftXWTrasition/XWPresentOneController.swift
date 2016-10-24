@@ -38,10 +38,21 @@ class XWPresentOneController: UIViewController, XWPresentedOneControllerDelegate
         };
         interactivePush?.addPanGesture(ForViewController: self.navigationController!);
         
-        let viewsDictionary = ["imageView":imageView, "button":button];
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView(250)]|", options: [], metrics: nil, views: viewsDictionary));
+//        let viewsDictionary = ["imageView":imageView, "button":button];
+//        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView(250)]", options: [], metrics: nil, views: viewsDictionary));
+//        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[imageView(250)]", options: [], metrics: nil, views: viewsDictionary));
+        let imageWidthConstraint = NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 250);
+        let imageHeightConstraint = NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 250);
+        let imageXConstraint = NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0);
+        let imageYPosition = NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 75);
+        NSLayoutConstraint.activate([imageWidthConstraint, imageHeightConstraint, imageXConstraint, imageYPosition]);
+//        imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true;
+//        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imageView(250)]|", options: [], metrics: nil, views: viewsDictionary));
 //        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[textView]|", options: [], metrics: nil, views: viewsDictionary));
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-70-[imageView(250)-10-[button]]|", options: [NSLayoutFormatOptions.alignAllCenterX], metrics: nil, views: viewsDictionary));
+//        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-70-[imageView(250)-10-[button]]|", options: [NSLayoutFormatOptions.alignAllCenterX], metrics: nil, views: viewsDictionary));
+        let buttonXCenter = NSLayoutConstraint(item: button, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0);
+        let buttonYPosition = NSLayoutConstraint(item: button, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1.0, constant: 10);
+        NSLayoutConstraint.activate([buttonXCenter, buttonYPosition]);
 //
     }
 

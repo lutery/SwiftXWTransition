@@ -35,7 +35,7 @@ class XWPresentOneTransition: NSObject, UIViewControllerAnimatedTransitioning {
             self.present(Animation: transitionContext);
             
         case PresentOneTransitionType.Dismiss:
-            self.present(Animation: transitionContext);
+            self.dismiss(Animation: transitionContext);
         }
     }
     
@@ -58,9 +58,41 @@ class XWPresentOneTransition: NSObject, UIViewControllerAnimatedTransitioning {
             tempView.transform = CGAffineTransform(scaleX: 0.85, y: 0.85);
             }, completion: {
                 finish in
-                transitionContext.completeTransition(transitionContext.transitionWasCancelled);
+                transitionContext.completeTransition(!(transitionContext.transitionWasCancelled));
                 if transitionContext.transitionWasCancelled {
                     fromVC?.view.isHidden = false;
+                    tempView.removeFromSuperview();
+                }
+//                if transitionContext.transitionWasCancelled {
+//                    transitionContext.completeTransition(false);
+//                }
+//                else{
+//                    transitionContext.completeTransition(true);
+//                    toVC?.view.isHidden = false;
+//                    tempView.removeFromSuperview();
+//                }
+        })
+    }
+    
+    func dismiss(Animation transitionContext:UIViewControllerContextTransitioning){
+        let toVC = transitionContext.viewController(forKey: .to);
+        let fromVC = transitionContext.viewController(forKey: .from);
+        
+        let containerView = [transitionContext.containerView];
+        let subViewsArray = containerView[0].subviews;
+        let tempView = subViewsArray[min(subViewsArray.count, max(0, subViewsArray.count - 2))];
+        
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
+            fromVC?.view.transform = CGAffineTransform.identity;
+            tempView.transform = CGAffineTransform.identity;
+            }, completion: {
+                finish in
+                if transitionContext.transitionWasCancelled{
+                    transitionContext.completeTransition(false);
+                }
+                else{
+                    transitionContext.completeTransition(true);
+                    toVC?.view.isHidden = false;
                     tempView.removeFromSuperview();
                 }
         })

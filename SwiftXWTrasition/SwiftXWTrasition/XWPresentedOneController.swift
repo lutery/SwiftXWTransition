@@ -20,8 +20,11 @@ class XWPresentedOneController: UIViewController, UIViewControllerTransitioningD
     var delegate:XWPresentedOneControllerDelegate? = nil;
 
     override func viewDidLoad() {
+        self.transitioningDelegate = self;
+        self.modalPresentationStyle = .custom;
+        
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.view.layer.cornerRadius = 10;
         self.view.layer.masksToBounds = true;

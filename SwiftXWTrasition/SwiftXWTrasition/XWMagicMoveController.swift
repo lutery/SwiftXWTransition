@@ -18,6 +18,7 @@ class XWMagicMoveController: UICollectionViewController {
     private let reuseIdentifier = "Cell"
     
     init() {
+        //初始化单元布局对象
         let layout = UICollectionViewFlowLayout();
         layout.itemSize = CGSize(width: 150, height: 150);
         layout.minimumInteritemSpacing = 10;
@@ -38,7 +39,9 @@ class XWMagicMoveController: UICollectionViewController {
 
         self.title = "神奇移动";
         self.collectionView?.backgroundColor = UIColor.white;
+        //注册单员布局
         self.collectionView?.register(UINib(nibName: "XWMagicMoveCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier);
+        //修改导航栏左item按钮
         let back = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.plain, target: self, action: #selector(XWMagicMoveController.backToRoot));
         self.navigationItem.leftBarButtonItem = back;
         
@@ -77,6 +80,7 @@ class XWMagicMoveController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //根据标识生成单员对象
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
         // Configure the cell
@@ -84,6 +88,11 @@ class XWMagicMoveController: UICollectionViewController {
         return cell
     }
     
+    
+    /// 重载单元选择函数
+    ///
+    /// - parameter collectionView: <#collectionView description#>
+    /// - parameter indexPath:      选择的单元位置对象，包含第几个部分第几个单元
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentIndexPath = indexPath;
         let vc = XWMagicMovePushController();
