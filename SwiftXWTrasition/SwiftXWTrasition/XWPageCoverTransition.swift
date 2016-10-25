@@ -34,10 +34,10 @@ class XWPageCoverTransition: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         switch self._type {
         case .push:
-            break;
+            self.doPushAnimation(transitionContext);
             
         case .pop:
-            break;
+            self.doPopAnimation(transitionContext);
         }
     }
     

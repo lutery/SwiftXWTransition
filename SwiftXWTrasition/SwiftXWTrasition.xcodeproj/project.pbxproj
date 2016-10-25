@@ -26,6 +26,7 @@
 		E6E0C51E1DBDB07400EBFE25 /* XWPageCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E0C51D1DBDB07400EBFE25 /* XWPageCoverController.swift */; };
 		E6E0C5201DBDB0A400EBFE25 /* XWPageCoverTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E0C51F1DBDB0A400EBFE25 /* XWPageCoverTransition.swift */; };
 		E6E0C5221DBDBB2300EBFE25 /* XWPageCoverPushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E0C5211DBDBB2300EBFE25 /* XWPageCoverPushController.swift */; };
+		E6FE62BC1DBF0AB50055D9F9 /* XWCircleSpreadTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE62BB1DBF0AB50055D9F9 /* XWCircleSpreadTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		E6E0C51D1DBDB07400EBFE25 /* XWPageCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPageCoverController.swift; sourceTree = "<group>"; };
 		E6E0C51F1DBDB0A400EBFE25 /* XWPageCoverTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPageCoverTransition.swift; sourceTree = "<group>"; };
 		E6E0C5211DBDBB2300EBFE25 /* XWPageCoverPushController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPageCoverPushController.swift; sourceTree = "<group>"; };
+		E6FE62BB1DBF0AB50055D9F9 /* XWCircleSpreadTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWCircleSpreadTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		E68DDA301D585B4000B87E69 /* CircleSpreadController */ = {
 			isa = PBXGroup;
 			children = (
+				E6FE62BB1DBF0AB50055D9F9 /* XWCircleSpreadTransition.swift */,
 			);
 			name = CircleSpreadController;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				E68DDA001D58255400B87E69 /* AppDelegate.swift in Sources */,
 				E65EC4F81D6447E50014F544 /* XWPresentOneController.swift in Sources */,
 				E6E0C51E1DBDB07400EBFE25 /* XWPageCoverController.swift in Sources */,
+				E6FE62BC1DBF0AB50055D9F9 /* XWCircleSpreadTransition.swift in Sources */,
 				E68DDA3B1D585D0700B87E69 /* XWMagicMovePushController.swift in Sources */,
 				E68DDA351D585C3200B87E69 /* XWMagicMoveController.swift in Sources */,
 				E6E0C5221DBDBB2300EBFE25 /* XWPageCoverPushController.swift in Sources */,
