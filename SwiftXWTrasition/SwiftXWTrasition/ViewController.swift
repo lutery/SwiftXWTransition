@@ -17,7 +17,7 @@ class ViewController: UITableViewController {
     };
     var _viewControllers:NSArray{
         get{
-            return ["XWMagicMoveController", "XWPresentOneController", "XWPageCoverController", "XWCircleSpreadController"];
+            return ["XWMagicMoveController", "XWPresentOneController", "XWPageCoverController", "CircleSpreadController"];
         }
     }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E63714321DC0431B009BF6A5 /* CircleSpreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63714311DC0431B009BF6A5 /* CircleSpreadController.swift */; };
+		E63714341DC0A4F7009BF6A5 /* CircleSpreadPresentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63714331DC0A4F7009BF6A5 /* CircleSpreadPresentedController.swift */; };
 		E65EC4F81D6447E50014F544 /* XWPresentOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC4F71D6447E50014F544 /* XWPresentOneController.swift */; };
 		E65EC4FA1D64515A0014F544 /* XWPresentedOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC4F91D64515A0014F544 /* XWPresentedOneController.swift */; };
 		E65EC4FC1D6459500014F544 /* XWPresentOneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EC4FB1D6459500014F544 /* XWPresentOneTransition.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E63714311DC0431B009BF6A5 /* CircleSpreadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSpreadController.swift; sourceTree = "<group>"; };
+		E63714331DC0A4F7009BF6A5 /* CircleSpreadPresentedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSpreadPresentedController.swift; sourceTree = "<group>"; };
 		E65EC4F71D6447E50014F544 /* XWPresentOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPresentOneController.swift; sourceTree = "<group>"; };
 		E65EC4F91D64515A0014F544 /* XWPresentedOneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPresentedOneController.swift; sourceTree = "<group>"; };
 		E65EC4FB1D6459500014F544 /* XWPresentOneTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWPresentOneTransition.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				E6FE62BB1DBF0AB50055D9F9 /* XWCircleSpreadTransition.swift */,
+				E63714311DC0431B009BF6A5 /* CircleSpreadController.swift */,
+				E63714331DC0A4F7009BF6A5 /* CircleSpreadPresentedController.swift */,
 			);
 			name = CircleSpreadController;
 			sourceTree = "<group>";
@@ -346,11 +352,13 @@
 				E68DDA3D1D585D3E00B87E69 /* XWNaviTransition.swift in Sources */,
 				E68DDA001D58255400B87E69 /* AppDelegate.swift in Sources */,
 				E65EC4F81D6447E50014F544 /* XWPresentOneController.swift in Sources */,
+				E63714321DC0431B009BF6A5 /* CircleSpreadController.swift in Sources */,
 				E6E0C51E1DBDB07400EBFE25 /* XWPageCoverController.swift in Sources */,
 				E6FE62BC1DBF0AB50055D9F9 /* XWCircleSpreadTransition.swift in Sources */,
 				E68DDA3B1D585D0700B87E69 /* XWMagicMovePushController.swift in Sources */,
 				E68DDA351D585C3200B87E69 /* XWMagicMoveController.swift in Sources */,
 				E6E0C5221DBDBB2300EBFE25 /* XWPageCoverPushController.swift in Sources */,
+				E63714341DC0A4F7009BF6A5 /* CircleSpreadPresentedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
